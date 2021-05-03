@@ -1,0 +1,171 @@
+FORMAT: 1A
+HOST: localhost/
+
+# UAS
+
+Task manager yang mengatur task perkantoran. 
+
+## RestAPI Restoran [/project]
+
+### MakananBaru [GET/webserviceapi/getmakananbaru.php]
+
++ Response 200 (application/json)
+
+{
+    "result": 1,
+    "message": "Data berhasil di ambil",
+    "data": [
+        {
+            "id_makanan": "4",
+            "id_user": "0",
+            "id_kategori": "0",
+            "nama_makanan": "Pecel Lele",
+            "desc_makanan": "Enak",
+            "foto_makanan": "",
+            "insert_time": "2020-04-10",
+            "view": "0"
+        },
+        {
+            "id_makanan": "3",
+            "id_user": "0",
+            "id_kategori": "0",
+            "nama_makanan": "Pecel Lele",
+            "desc_makanan": "Enak",
+            "foto_makanan": "",
+            "insert_time": "2020-04-10",
+            "view": "0"
+        },
+        {
+            "id_makanan": "2",
+            "id_user": "0",
+            "id_kategori": "0",
+            "nama_makanan": "Pecel Lele",
+            "desc_makanan": "Enak",
+            "foto_makanan": "",
+            "insert_time": "2020-04-10",
+            "view": "0"
+        },
+        {
+            "id_makanan": "1",
+            "id_user": "0",
+            "id_kategori": "0",
+            "nama_makanan": "Pecel Lele",
+            "desc_makanan": "Enak",
+            "foto_makanan": "",
+            "insert_time": "2020-04-10",
+            "view": "0"
+        }
+    ]
+}
+
+### CekDetailMakanan [GET/webserviceapi/getdetailmakanan.php?idmakanan=1]
+
+
++ Request (application/json)
+
+{
+    "result": 1,
+    "message": "Data berhasil di ambil",
+    "data": {
+        "id_makanan": "1",
+        "id_user": "0",
+        "id_kategori": "0",
+        "nama_makanan": "Pecel Lele",
+        "desc_makanan": "Enak",
+        "foto_makanan": "",
+        "insert_time": "2020-04-10",
+        "view": "0"
+    }
+}
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /project/post.php
+
+    + Body
+
+            {
+            "Task Data": [
+            {
+                "Data berhasil di ambil"
+            },
+            ]
+            }
+            
+### Upload Makanan [POST/webserviceapi/uploadmakanan.php]
+
+
++ Request (application/json)
+
+{
+    "result": 1,
+    "message": "Upload berhasil",
+    "name": "Pecel Lele"
+}
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /project/update.php
+
+    + Body
+
+            {
+            "Task Status": [
+            {
+                "result": "",
+                "message": "",
+                "name": "",
+            },
+            ]
+            }
+            
+### Update Makanan [POST/webserviceapi/updatemakanan.php]
+
+
++ Request (application/json)
+
+{
+    "result": 1,
+    "message": "Update berhasil",
+    "name": "Pecel Lele Mantap"
+}
+        
+        + Response 201 (application/json)
+
+    + Headers
+
+            Location: /project/delete
+
+    + Body
+
+            {
+            " Update Berhasil "
+            ]
+            }
+            
+### Delete Makanan [POST/webserviceapi/deletemakanan.php]
+
+
++ Request (application/json)
+
+{
+    "result": 1,
+    "message": "Data makanan berhasil dihapus!"
+}
+        
+        + Response 201 (application/json)
+
+    + Headers
+
+            Location: /project/delete
+
+    + Body
+
+            {
+            " Delete Berhasil "
+            ]
+            }
